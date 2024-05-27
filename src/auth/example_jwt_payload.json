@@ -1,0 +1,66 @@
+{
+  "clientId" : "OceanWatcher",
+  "policies" : [
+    {
+      "actions": ["FPGAReconfigure"],
+      "resources": [
+        {
+          "bitstream": "ngaf_esps.bit"
+        },
+        {
+          "bitstream": "ngaf_esps_uio.bit"
+        }
+      ]
+    },
+    {
+      "actions": ["EFPSOpen"],
+      "resources": [
+        {
+          "MemoryMappedRegisterLocation": "/dev/uio10",
+          "PrivateMemoryRegisterLocation": "/dev/uio2"
+        }
+      ]
+    },
+    {
+      "actions": ["PrivateMemoryWrite", "IRQWait", "MemoryMappedRegisterWrite", "MemoryMappedRegisterRead", "PrivateMemoryRead", "EFPSClose"],
+      "resources": [
+        {}
+      ]
+    },
+    {
+      "actions" : ["getUptime"],
+      "resources" : [
+        {
+          "mission_database_id" : "platform-5-platform-5-obc-fidl"
+        }
+      ]
+    },
+    {
+      "actions" : ["CAPTURE_IMAGE"],
+      "resources" : [
+        {
+          "payloadId" : "acA5472-5gc"
+        }
+      ]
+    },
+    {
+      "actions" : ["getModuleVersionInfo"],
+      "resources" : [
+        {
+          "mission_database_id" : "platform-5-platform-5-moduleid-fidl"
+        }
+      ]
+    },
+    {
+      "actions" : ["startDeployment"],
+      "resources" : [
+        {
+          "mission_database_id" : "platform-5-obc-moduleid-client",
+          "data" : {
+            "DeployCommand" : {}
+          }
+        }
+      ]
+    }
+  ]
+}

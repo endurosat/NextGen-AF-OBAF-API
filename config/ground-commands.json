@@ -1,0 +1,10 @@
+{
+  "0" : "getContainerStatus",
+  "1" : "startContainer",
+  "2" : "stopContainer",
+  "3" : "sendCommand",
+  "4" : "scheduleStartContainer",
+  "5" : "scheduleStopContainer",
+  "6" : "updateClient",
+  "7" : "updateFramework"
+}
